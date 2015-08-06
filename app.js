@@ -6,10 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var partials = require('express-partials');
 var methodOverride = require('method-override');
-<<<<<<< HEAD
-=======
 
->>>>>>> 65708fa72d7f2f820949fd2696cded8fa1897350
 var routes = require('./routes/index');
 
 var app = express();
@@ -24,10 +21,7 @@ app.use(partials());
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-<<<<<<< HEAD
-=======
-//app.use(bodyParser.urlencoded({ extended: false }));
->>>>>>> 65708fa72d7f2f820949fd2696cded8fa1897350
+
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
@@ -53,11 +47,7 @@ if (app.get('env') === 'development') {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
-<<<<<<< HEAD
-            error: err, 
-=======
             error: err,
->>>>>>> 65708fa72d7f2f820949fd2696cded8fa1897350
             errors: []
         });
     });
@@ -69,11 +59,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
-<<<<<<< HEAD
-        error: {}, 
-=======
         error: {},
->>>>>>> 65708fa72d7f2f820949fd2696cded8fa1897350
         errors: []
     });
 });

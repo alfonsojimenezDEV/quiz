@@ -34,14 +34,10 @@ nav span {
 
 #ErrorMsgs {
     color: #f61;
-<<<<<<< HEAD
     font-size: smaller;
 }
 
 td, th {
     text-align: left;
 }
-=======
-    font-size: smaler;
-}
->>>>>>> 65708fa72d7f2f820949fd2696cded8fa1897350
+
