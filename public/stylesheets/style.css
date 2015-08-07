@@ -41,3 +41,6 @@ td, th {
     text-align: left;
 }
 
+.right {
+    float: right;
+}
