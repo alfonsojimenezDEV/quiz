@@ -40,7 +40,23 @@ app.use(function(req, res, next) {
     }
     //Hacer visible req.session en las vistas
     res.locals.session = req.session;
-    next();
+
+    if (req.session.duracion) {
+        var ultimoTiempo = new Date().getTime();
+        var intervalo = ultimoTiempo - req.session.duracion
+        if (intervalo > (1*5*1000)) {
+            delete req.session.duracion;
+            console.log('Lleva más de dos minutos');
+            res.redirect('/logout');
+            
+        } else { 
+          console.log('Llevas ' + intervalo + ' milisegundos');
+            req.session.duracion = ultimoTiempo;
+            next();
+        }
+    } else { 
+        next();
+    }
 });
 
 app.use('/', routes);
