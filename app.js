@@ -44,13 +44,13 @@ app.use(function(req, res, next) {
     if (req.session.duracion) {
         var ultimoTiempo = new Date().getTime();
         var intervalo = ultimoTiempo - req.session.duracion
-        if (intervalo > (1*5*1000)) {
+        if (intervalo > (2*60*1000)) {
             delete req.session.duracion;
-            console.log('Lleva más de dos minutos');
+            //console.log('Lleva más de dos minutos');
             res.redirect('/logout');
             
         } else { 
-          console.log('Llevas ' + intervalo + ' milisegundos');
+            //console.log('Llevas ' + intervalo + ' milisegundos');
             req.session.duracion = ultimoTiempo;
             next();
         }
